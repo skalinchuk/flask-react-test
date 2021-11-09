@@ -1,0 +1,39 @@
+.company-card {
+    display: flex;
+    border: calc(var(--rem) * 2) solid #d0d0d0;
+    padding: calc(var(--rem) * 20);
+    margin: calc(var(--rem) * 10) 0;
+    background: white;
+}
+
+.company-icon {
+    margin-right: calc(var(--rem) * 20);
+    padding: calc(var(--rem) * 3);
+    border: calc(var(--rem) * 2) solid #B58D20;
+    border-radius: 50%;
+    width: calc(var(--rem) * 54);
+    height: calc(var(--rem) * 54);
+}
+
+.company-text {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.company-name {
+    color: #b48c1d;
+    font-size: calc(var(--rem) * 18);
+    font-weight: bold;
+}
+
+.company-location {
+    color: #465c7d;
+    font-size: calc(var(--rem) * 16);
+}
+
+.location-pin {
+    height: calc(var(--rem) * 20);
+    margin-bottom: calc(var(--rem) * -5);
+}

@@ -1,0 +1,21 @@
+.pagination-wrapper {
+    display: flex;
+    justify-content: space-around;
+    margin-top: calc(var(--rem) * 20);
+}
+
+.page-link, .page-interval {
+    font-size: calc(var(--rem) * 18);
+    padding: calc(var(--rem) * 4) calc(var(--rem) * 10);
+    color: black;
+}
+
+.page-link {
+    background: #d9d9d9;
+}
+
+.page-link.active {
+    background: #B58D20;
+    color: white;
+    border: 1px solid white;
+}

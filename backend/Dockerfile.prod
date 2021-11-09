@@ -1,0 +1,15 @@
+# Pull the base image
+FROM python:3.8-slim
+
+# Set environment variables
+ENV PYTHONDONTWRITEBYTECODE 1
+ENV PYTHONUNBUFFERED 1
+
+WORKDIR /app
+ADD requirements.prod.txt ./
+
+# Install dependencies
+RUN pip install -r requirements.prod.txt
+
+# Run gunicorn web server
+CMD ["gunicorn", "--bind", "0.0.0.0:8000", "app:app"]

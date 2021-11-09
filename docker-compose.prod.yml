@@ -1,0 +1,37 @@
+version: "3"
+services:
+  backend:
+    restart: always
+    build:
+      context: ./backend
+      dockerfile: Dockerfile.prod
+    environment:
+      - FLASK_APP=app
+      - FLASK_ENV=production
+    networks:
+      - flask-react-test
+    volumes:
+      - ./backend:/app
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile.prod
+    networks:
+      - flask-react-test
+    volumes:
+      - ./frontend:/app
+  proxy:
+    image: nginx
+    volumes:
+      - ./nginx/nginx.prod.conf:/etc/nginx/conf.d/default.conf
+      - ./frontend/build:/frontend
+    networks:
+      - flask-react-test
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+      - frontend
+networks:
+    flask-react-test:
+        driver: bridge

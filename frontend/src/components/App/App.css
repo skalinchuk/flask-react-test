@@ -1,0 +1,34 @@
+:root {
+    --rem: 1px;
+}
+
+body {
+    background: #f0f2f5;
+}
+
+.app {
+    width: calc(var(--rem) * 1000);
+    margin: calc(var(--rem) * 40);
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-text {
+    margin: 0;
+    font-size: calc(var(--rem) * 50);
+    color: #283b61;
+    font-weight: bold;
+}
+
+.clear-all {
+    color: #999999;
+    font-size: calc(var(--rem) * 40);
+    align-self: end;
+    margin-right: calc(var(--rem) * 60);
+}
